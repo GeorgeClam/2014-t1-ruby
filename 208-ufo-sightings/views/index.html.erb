@@ -1,3 +1,7 @@
-<h1>UFO sightings</h1>
+<h1><b>UFO sightings</b></h1>
 
-<!-- TODO: write this -->
+
+  <% Encounter.order(:id).each do |e| %>
+    <p><b><%= e.location %></b></p>
+    <p><%= e.occurrence %></p>
+  <% end %>
