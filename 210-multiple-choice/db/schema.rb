@@ -11,9 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140212225558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "math_quizzes", force: true do |t|
+    t.string "number"
+    t.string "problem"
+    t.string "solution1"
+    t.string "solution2"
+    t.string "solution3"
+    t.string "solution4"
+  end
 
 end
