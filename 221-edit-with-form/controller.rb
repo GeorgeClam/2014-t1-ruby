@@ -11,4 +11,11 @@ get "/patients/:id" do
   halt erb(:edit)
 end
 
-# TODO: write POST handler
+post "/patients/:id" do
+  id    			 = params["id"]
+  @patient           = Patient.new
+  @patient.systolic  = params["systolic"]
+  @patient.diastolic = params["diastolic"]
+  @patient.save!
+  redirect "/"
+end

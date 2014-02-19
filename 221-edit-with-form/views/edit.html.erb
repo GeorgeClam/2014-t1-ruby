@@ -1,1 +1,18 @@
+<h1><strong>Edit patient #1</strong></h1>
+
+<h3><b>Systolic</b></h3>
+<p>
+  <%= text_field_tag "systolic", @patient.systolic, size: 35 %>
+</p>
+<h3><b>Diastolic</b></h3>
+<p>
+  <%= text_field_tag "diastolic", @patient.diastolic, size: 35 %>
+</p>
+<p>
+  <%= submit_tag "Update" %>	
+</p>
+
+
+
+
 <!-- TODO: write this to match the mockup -->
