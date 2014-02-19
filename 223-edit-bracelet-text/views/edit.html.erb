@@ -1,1 +1,15 @@
-<!-- TODO: write this to look like the mockup -->
+<h2>
+  <b>Font size</b>
+</h2>
+<p>
+  <%= text_field_tag "font_size", @lines.font_size, size: 15 %>(between 8 and 12)
+</p>
+
+<h2>
+  <b>Text</b>
+</h2>
+<p>
+  <%= text_field_tag "text", @lines.text, size: 30 %>
+</p>
+<br>
+<% submit_tag "Update" %>

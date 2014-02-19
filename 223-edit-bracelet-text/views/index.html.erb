@@ -3,18 +3,18 @@
 <h2>Preview</h2>
 
 <div class="bracelet-preview">
-  <% @lines.each do |line| %>
-    <div style='font-size:<%= line.font_size %>pt'>
-      <%= line.text %>
+  <% @lines.each do |lines| %>
+    <div style='font-size:<%= lines.font_size %>pt'>
+      <%= lines.text %>
     </div>
   <% end %>
 </div>
 
 <ul>
-  <% @lines.each do |line| %>
+  <% @lines.each do |lines| %>
     <li>
-      <a href="/lines/<%= line.id %>">
-        Customize line <%= line.id %>
+      <a href="/lines/<%= lines.id %>">
+        Customize lines <%= lines.id %>
       </a>
     </li>
   <% end %>
