@@ -6,16 +6,33 @@ get "/" do
 end
 
 get "/new_goat" do
-  @goat = RacingGoat.new
+  @goats = RacingGoat.new
   halt erb(:edit_or_new)
 end
 
-# TODO: POST handler for adding a new goat
+post "/new_goat" do
+  @goats = RacingGoat.new
+  @goats.name = params["name"]
+  @goats.gender = params["gender"]
+  @goats.best_100m_time = params["time"]
+  @goats.dietary_preference = params ["diet"]
+  @goats.save!
+  redirect "/"
+end
 
 get "/goats/:id" do
   id = params["id"]
-  @goat = RacingGoat.find(id)
+  @goats = RacingGoat.find(id)
   halt erb(:edit_or_new)
 end
 
-# TODO: POST handler for editing a goat's information
+post "/goats/:id" do
+  id = params["id"]
+  @goats = RacingGoat.new
+  @goats.name = params["name"]
+  @goats.gender = params["gender"]
+  @goats.best_100m_time = params["time"]
+  @goats.dietary_preference = params["diet"]
+  @goats.save!
+  redirect "/"
+end

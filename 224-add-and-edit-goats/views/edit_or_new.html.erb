@@ -1,3 +1,41 @@
 <h1>Edit or add new goat</h1>
 
-<!-- TODO: write this part based on the mockup -->
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <td>
+      <%= text_field_tag "name", @goats.name, size: 15 %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Gender
+    </th>
+    <td>
+      <%= text_field_tag "gender", @goats.gender, size: 15 %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Best 100 meter time
+    </th>
+    <td>
+      <%= text_field_tag "time", @goats.best_100m_time, size: 15 %>
+    </td>
+  </tr>
+  <tr>
+    <th>
+      Dietary preference
+    </th>
+    <td>
+      <%= text_field_tag "diet", @goats.dietary_preference, size: 15 %>
+    </td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>
+      <%= submit_tag "Save" %>
+    </td>
+</table>	
