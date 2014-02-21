@@ -15,7 +15,7 @@ post "/new_goat" do
   @goats.name = params["name"]
   @goats.gender = params["gender"]
   @goats.best_100m_time = params["time"]
-  @goats.dietary_preference = params ["diet"]
+  @goats.dietary_preference = params["diet"]
   @goats.save!
   redirect "/"
 end
