@@ -25,7 +25,7 @@ end
 
 get "/presidents/:id" do
   id         = params["id"]
-  @president = President.order(id)
+  @president = President.find(id)
   halt erb(:edit)
 end
 
@@ -37,7 +37,7 @@ post "/presidents/:id" do
   @president.biography         = params["biography"]
   @president.ended_term_early  = params["ended_term_early"]
   @president.party             = params["party"]
-  @president.former_occupation = params ["former_occupation"]
+  @president.former_occupation = params["former_occupation"]
   @president.birth_state_id    = params["birth_state_id"]
   @president.save!
   redirect "/"

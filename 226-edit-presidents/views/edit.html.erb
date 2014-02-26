@@ -32,13 +32,13 @@
   <p>
     <%= label_tag "former_occupation" %>
   <br>
-    <% select_tag "former_occupation", options_for_select(["lawyer", "clothing retailer", "soldier", "city planner"], @president.former_occupation), prompt: "Former Occupation" %>
+    <%= select_tag "former_occupation", options_for_select(["lawyer", "clothing retailer", "soldier", "city planner"], @president.former_occupation), prompt: "Former Occupation" %>
   </p>
 
   <p>
     <%= label_tag "birth_state_id" %>
   <br>
-    <%= select_tag "birth_state_id", options_from_collection_for_select(State.all, :id, :name, @president.birth_state_id), prompt: "Birth State" %>
+    <%= select_tag "birth_state_id", options_from_collection_for_select(State.all, :id, :name, @president), prompt: "Birth State" %>
   </p>
   
   <p>
