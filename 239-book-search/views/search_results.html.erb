@@ -1,1 +1,20 @@
-<!-- TODO: write view to match the mockup -->
+<h1><%= @header %></h1>
+
+<table class: "table">
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Published</th>
+  </tr>
+  <% @books.each do |b| %>
+  <tr>
+    <td>
+      <a href="/isbn/<%= b.isbn %>">
+        <%= b.title %>
+      </a>
+    </td>
+    <td><%= b.author %></td>
+    <td><%= b.publication_year %></td>
+  </tr>
+  <% end %>
+</table>
