@@ -38,7 +38,7 @@ post "/goats/:id" do
   @goat.dietary_preference = params["dietary_preference"]
   if @goat.save == true
     redirect "/goats/#{id}"
-  # else
-  #   halt erb(:edit)
+  else
+    halt erb(:edit)
   end
 end
