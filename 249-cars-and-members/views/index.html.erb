@@ -1,7 +1,19 @@
 <% @members.each do |member| %>
+ 
   <h2><%= member.name %>'s cars:</h2>
-  <!-- Write code to generate <ul> list here or (None) -->
+    <% if Car.where(member_id: member.id).size == 0 %>
+      (None)
+    <% else %>
+      <% Car.where(member_id: member.id).each do |c| %>
+        <ul>
+          <li><%= c.model %></li>
+        </ul>
+      <% end %>
+    <% end %>
+
 <% end %>
 
 <h2>No one's cars:</h2>
-<!-- Write code to generate <ul> list here -->
+  <% Car.where(member_id: nil).each do |c| %>
+  <li><%= c.model %></li> 
+  <% end %> 
